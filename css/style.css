@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+.form {
+  position: relative;
+  height: 100vh;
+  top: 0;
+  background-image: url("../../img/background-login.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .form::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); }
+  .form .container {
+    font-family: 'Work Sans', sans-serif;
+    height: 600px;
+    max-width: 1200px;
+    background-color: #fee3a8;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
+    z-index: 1; }
+    .form .container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -15%;
+      height: 100%;
+      width: 60%;
+      transform: skewX(-25deg);
+      background-color: rgba(0, 0, 0, 0.5); }
+    .form .container .session {
+      height: calc(100% - 150px);
+      width: 50%;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 40px;
+      z-index: 1; }
+      .form .container .session .fieldBox {
+        width: 100%;
+        height: auto; }
+        .form .container .session .fieldBox label {
+          font-size: 22px;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          color: #ffdb8e; }
+          .form .container .session .fieldBox label input {
+            width: 70%;
+            padding: 10px;
+            color: #fff;
+            font-size: 18px;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #fff; }
+            .form .container .session .fieldBox label input:focus {
+              outline: none; }
+            .form .container .session .fieldBox label input::placeholder {
+              color: white;
+              font-size: 18px;
+              font-family: 'Work Sans', sans-serif; }
+      .form .container .session .formbtn {
+        height: 40px;
+        width: 30%;
+        color: #000;
+        font-family: 'Work Sans', sans-serif;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        background-color: #fee3a8; }
+    .form .container .image {
+      height: 100%;
+      width: 50%; }
+      .form .container .image img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover; }
