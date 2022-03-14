@@ -153,6 +153,8 @@
       font-size: 20px; }
       .main .form .session .label input {
         padding: 15px 0px; }
+        .main .form .session .label input::placeholder {
+          font-size: 16px; }
     .main .form .formbtn {
       height: 40px;
       font-size: 16px; } }
