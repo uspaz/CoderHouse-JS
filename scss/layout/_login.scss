@@ -1,75 +1,109 @@
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap");
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box; }
-
-.body {
+.body{
   height: 100vh;
   width: 100%;
   background-image: url("../img/background-login.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: left ;
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center; }
-  .body::before {
+  justify-content: center;
+  &::before{
     content: "";
     position: absolute;
     top: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: -1; }
-  .body .form {
+    background-color: rgba(0, 0, 0, .4);
+    z-index: -1;
+  }
+  .form{
     height: 400px;
     width: 80%;
     background-color: #fee3a8;
     border-radius: 10px;
     font-family: 'Work Sans', sans-serif;
-    z-index: 1; }
-    .body .form .session {
+    z-index: 1;
+    .session{
       height: 100%;
       width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      align-items: flex-start; }
-      .body .form .session .fieldBox {
+      align-items: flex-start;
+      .fieldBox{
         width: 85%;
-        height: auto; }
-      .body .form .session .label {
+        height: auto;
+      }
+      .label{
         height: auto;
         width: 100%;
         display: flex;
         flex-direction: column;
         gap: 15px;
-        margin-left: 20px; }
-        .body .form .session .label input {
+        margin-left: 20px;
+        input{
           padding: 10px 0px;
           border: none;
           border-bottom: 1px solid #000;
           background-color: transparent;
-          font-family: 'Work Sans', sans-serif; }
-          .body .form .session .label input::placeholder {
+          font-family: 'Work Sans', sans-serif;
+          &::placeholder{
             color: #000;
-            font-family: 'Work Sans', sans-serif; }
-          .body .form .session .label input:focus {
-            outline: none; }
-    .body .form .image {
-      display: none; }
-    .body .form .formbtn {
+            font-family: 'Work Sans', sans-serif;
+          }
+          &:focus{
+            outline: none;
+          }
+        }
+      }
+    }
+    .image{
+      display: none;
+    }
+    .formbtn{
       align-self: center;
       height: 35px;
       width: 50%;
       border-radius: 5px;
       border: none;
-      font-family: 'Work Sans', sans-serif; }
+      font-family: 'Work Sans', sans-serif;
+    }
+  }
+}
+img{
+  display: none;
+}
 
-img {
-  display: none; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*.form{
   position: relative;

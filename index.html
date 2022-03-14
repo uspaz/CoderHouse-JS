@@ -7,22 +7,20 @@
   <title>Login</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <form class="form" action="index.html" method="post">
-    <div class="container">
-      <div class="session">
-        <div class="fieldBox">
-          <label for="user">Usuario: <input type="text" name="user" id="" placeholder="Escriba aquí su usuario..."></label>
+<body class="body">
+    <form class="form" action="index.html" method="post">
+        <div class="session">
+          <div class="fieldBox">
+            <label for="user" class="label">Usuario:<input type="text" name="user" placeholder="Escriba aquí su usuario..."></label>
+          </div>
+          <div class="fieldBox">
+            <label for="password" class="label">Contraseña:<input type="password" name="password" placeholder="Escriba aquí su contraseña..."></label>
+          </div>
+          <input type="button" class="formbtn" value="Iniciar Sesión">
         </div>
-        <div class="fieldBox">
-          <label for="password">Contraseña: <input type="password" name="password" id="" placeholder="Escriba aquí su contraseña..."></label>
+        <div class="image">
+          <img src="img/pikachu.png" alt="">
         </div>
-        <input type="button" class="formbtn" value="Iniciar Sesión">
-      </div>
-      <div class="image">
-        <img src="img/pikachu.png" alt="">
-      </div>
-    </div>
-  </form>
+    </form>
 </body>
 </html>
