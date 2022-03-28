@@ -1,0 +1,195 @@
+.header{
+  height: 200px;
+  width: 100%;
+  background-color: #f6ee2b;
+  .header__section--title{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+  }
+  .header__section--filter{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    input{
+      height: 40px;
+      width: 230px;
+      border-radius: 30px;
+      border: none;
+      position: relative;
+      left: 10px;
+      padding: 0px 10px;
+      font-size: 14px;
+      font-family: 'Spartan', sans-serif;
+      &::placeholder{
+        text-align: center;
+        font-size: 14px;
+        font-family: 'Spartan', sans-serif;
+        position: relative;
+        left: 10px;
+      }
+      &:focus{
+        outline: none;
+      }
+    }
+    span{
+      font-size: 35px;
+      position: relative;
+      left: 30px;
+      top: 2px;
+    }
+    .ul--filter{
+      display: none;
+    }
+    .active{
+      position: absolute;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      background-color: #14213d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      z-index: 1;
+      .ul__item{
+        list-style: none;
+        button{
+          width: 100%;
+          padding: 10px;
+          list-style: none;
+          font-size: 20px;
+          text-align: center;
+          border: none;
+          color: #fff;
+          font-family: 'Varela Round', sans-serif;
+          background-color: transparent;
+          padding: 0px;
+        }
+      }
+    }
+  }
+}
+
+
+.main--pokedex{
+  height: auto;
+  width: 100%;
+  background-color: #f6ee2b;
+  .container__pokemons{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px 0px;
+    .card{
+      width: 300px;
+      height: 350px;
+      border-radius: 10px;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 33.33%, rgba(0, 0, 0, 0.12) 100%);
+      .card--image{
+        width: 240px;
+        margin: 0px auto;
+        img{
+          width: 100%;
+          filter: drop-shadow( 0px 4px 4px rgba(0, 0, 0, .45)) ;
+        }
+      }
+      .card--data{
+        font-family: 'Varela Round', sans-serif;
+        padding-left: 15px;
+        p{
+          font-size: 18px;
+        }
+        h2{
+          font-size: 25px;
+        }
+      }
+      .card--type{
+        height: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .planta{
+          width: 130px;
+          height: 35px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          font-family: 'Varela Round', sans-serif;
+          font-size: 20px;
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, .25);
+          background-color: #67CB4F;
+          border-radius: 10px;
+          text-shadow: #000000 3px 2px 4px;
+        }
+        .veneno{
+          @extend .planta;
+          background-color: #7b2cbf;
+        }
+        .fuego{
+          @extend .planta;
+          background-color: #fd7d24;
+        }
+        .agua{
+          @extend .planta;
+          background-color: #4592c4;
+        }
+        .hada{
+          @extend .planta;
+          background-color: #ff99ac;
+        }
+        .psiquico{
+          @extend .planta;
+          background-color: #e05780;
+        }
+        .roca{
+          @extend .planta;
+          background-color: #926c15;
+        }
+        .tierra{
+          @extend .planta;
+          background-color: #bf8f00 ;
+        }
+        .electrico{
+          @extend .planta;
+          background-color: #f5cc00;
+        }
+        .lucha{
+          @extend .planta;
+          background-color: #dc2f02;
+        }
+      }
+    }
+  }
+  .pages{
+    max-width: 500px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0px auto;
+    font-size: 30px;
+    padding: 20px 0px;
+    span{
+      width: auto;
+      cursor: pointer;
+      margin: 0px 10px;
+      color: #d90429;
+    }
+  }
+}
+.footer{
+  height: 70px;
+  width: 100%;
+  background-color: black;
+}
+
