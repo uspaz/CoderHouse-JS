@@ -12,17 +12,18 @@
     <form class="form" action="index.html" method="post">
         <div class="session">
           <div class="fieldBox">
-            <label for="user" class="label">Usuario:<input type="text" name="user" placeholder="Escriba aquí su usuario..."></label>
+            <label for="user" class="label">Usuario:<input id="usuario" type="text" name="user" placeholder="Escriba aquí su usuario..."></label>
           </div>
           <div class="fieldBox">
-            <label for="password" class="label">Contraseña:<input type="password" name="password" placeholder="Escriba aquí su contraseña..."></label>
+            <label for="password" class="label">Contraseña:<input id="contraseña" type="password" name="password" placeholder="Escriba aquí su contraseña..."></label>
           </div>
-          <input type="button" class="formbtn" value="Iniciar Sesión">
+          <input type="button" id="verificar" class="formbtn" value="Iniciar Sesión">
         </div>
         <div class="image">
           <img src="img/pikachu.png" alt="">
         </div>
     </form>
   </main>
+  <script src="js/login.js"></script>
 </body>
 </html>

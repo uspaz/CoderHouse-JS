@@ -6,6 +6,81 @@
   margin: 0;
   box-sizing: border-box; }
 
+.header {
+  height: 200px;
+  width: 100%;
+  background-color: #f6ee2b; }
+  .header .header__section--title {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px; }
+  .header .header__section--filter {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .header .header__section--filter input {
+      height: 40px;
+      width: 230px;
+      border-radius: 30px;
+      border: none;
+      position: relative;
+      left: 10px;
+      padding: 0px 10px;
+      font-size: 14px;
+      font-family: 'Spartan', sans-serif; }
+      .header .header__section--filter input::placeholder {
+        text-align: center;
+        font-size: 14px;
+        font-family: 'Spartan', sans-serif;
+        position: relative;
+        left: 10px; }
+      .header .header__section--filter input:focus {
+        outline: none; }
+    .header .header__section--filter span {
+      font-size: 35px;
+      position: relative;
+      left: 30px;
+      top: 2px; }
+    .header .header__section--filter .ul--filter {
+      display: none; }
+    .header .header__section--filter .active {
+      position: absolute;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      background-color: #14213d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      z-index: 1; }
+      .header .header__section--filter .active .ul__close {
+        width: 100%;
+        color: #fee440;
+        font-size: 35px;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 20px; }
+      .header .header__section--filter .active .ul__item {
+        list-style: none;
+        padding: 15px; }
+        .header .header__section--filter .active .ul__item button {
+          width: 100%;
+          padding: 10px;
+          list-style: none;
+          font-size: 20px;
+          text-align: center;
+          border: none;
+          color: #fff;
+          font-family: 'Varela Round', sans-serif;
+          background-color: transparent;
+          padding: 0px; }
+
 .main {
   height: 100vh;
   width: 100%;
@@ -73,7 +148,8 @@
       background-color: #000;
       border-radius: 5px;
       border: none;
-      font-family: 'Work Sans', sans-serif; }
+      font-family: 'Work Sans', sans-serif;
+      cursor: pointer; }
 
 @media only screen and (min-width: 600px) {
   .main {
@@ -171,73 +247,6 @@
     .main .form .formbtn {
       height: 40px;
       font-size: 16px; } }
-
-.header {
-  height: 200px;
-  width: 100%;
-  background-color: #f6ee2b; }
-  .header .header__section--title {
-    height: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding-top: 20px; }
-  .header .header__section--filter {
-    height: 50%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    .header .header__section--filter input {
-      height: 40px;
-      width: 230px;
-      border-radius: 30px;
-      border: none;
-      position: relative;
-      left: 10px;
-      padding: 0px 10px;
-      font-size: 14px;
-      font-family: 'Spartan', sans-serif; }
-      .header .header__section--filter input::placeholder {
-        text-align: center;
-        font-size: 14px;
-        font-family: 'Spartan', sans-serif;
-        position: relative;
-        left: 10px; }
-      .header .header__section--filter input:focus {
-        outline: none; }
-    .header .header__section--filter span {
-      font-size: 35px;
-      position: relative;
-      left: 30px;
-      top: 2px; }
-    .header .header__section--filter .ul--filter {
-      display: none; }
-    .header .header__section--filter .active {
-      position: absolute;
-      top: 0;
-      height: 100vh;
-      width: 100%;
-      display: flex;
-      background-color: #14213d;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-      z-index: 1; }
-      .header .header__section--filter .active .ul__item {
-        list-style: none; }
-        .header .header__section--filter .active .ul__item button {
-          width: 100%;
-          padding: 10px;
-          list-style: none;
-          font-size: 20px;
-          text-align: center;
-          border: none;
-          color: #fff;
-          font-family: 'Varela Round', sans-serif;
-          background-color: transparent;
-          padding: 0px; }
 
 .main--pokedex {
   height: auto;

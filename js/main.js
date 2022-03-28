@@ -58,10 +58,18 @@ function mostrarPokemons(){
     }
   });
 }
+function mostrarFiltros(){
+  let filtros = document.querySelector(".ul--filter");
 
-let filtros = document.querySelector(".ul--filter");
-document.getElementById("filtrar").addEventListener("click", () =>{
-  filtros.classList.add("active");
-});
+  document.getElementById("filtrar").addEventListener("click", () =>{
+    if(filtros.classList.contains("active") == false){
+      filtros.classList.add("active");
+    }
+  });
+  document.getElementById("close").addEventListener("click", () =>{
+    filtros.classList.remove("active");
+  });
+} 
 
 mostrarPokemons();
+mostrarFiltros();
