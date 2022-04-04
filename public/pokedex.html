@@ -7,7 +7,7 @@
   <title>Pokedex</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="body">
   <header class="header">
     <section class="header__section--title">
       <img src="../img/titulo-pokedex.webp" alt="">
@@ -26,6 +26,10 @@
         <li class="ul__item"><button>7ma Generación</button></li>
         <li class="ul__item"><button>8va Generación</button></li>
       </ul>
+      <!-- <select name="" id="">
+        <option value=""></option>
+        <option value=""></option>
+      </select> -->
     </section>
   </header>
   <main class="main--pokedex">
@@ -40,8 +44,20 @@
       </div>
   </main>
   <footer class="footer">
-    <div></div>
-    <div></div>
+    <div class="ft__derechos">
+      <p>@2022 Todos los derechos reservados</p>
+    </div>
+    <div class="ft__redes">
+      <ul class="redes__ul">
+        <li class="item"><a href="" class="instagram"><i class="fab fa-instagram"></i></a></li>
+        <li class="item"><a href="" class="linkedin"><i class="fab fa-linkedin"></i></a></li>
+        <li class="item"><a href="" class="whatsapp"><i class="fab fa-whatsapp"></i></a></li>
+      </ul>
+    </div>
+    <div class="ft__session">
+      <p id="usuario"></p>
+      <button type="button" class="btn"><i class="fas fa-sign-out"></i>Salir</button>
+    </div>
   </footer>
   <script src="https://kit.fontawesome.com/7db1b9fcb6.js" crossorigin="anonymous"></script>
   <script src="../js/main.js"></script>

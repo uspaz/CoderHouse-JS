@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@200;300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap');
 
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
+$redes: (
+  instagram: #e4405f,
+  linkedin: #0077b6,
+  whatsapp: #20d466
+);

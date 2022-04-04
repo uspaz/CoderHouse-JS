@@ -23,7 +23,7 @@
     background-color: #fee3a8;
     border-radius: 10px;
     font-family: 'Work Sans', sans-serif;
-    box-shadow: 0px 0px 20px 2px rgba(255, 255, 255, .8);
+    box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, .5);
     z-index: 1;
     .session{
       height: 100%;
@@ -64,6 +64,15 @@
     }
     .image{
       display: none;
+    }
+    .remember{
+      height: auto;
+      margin: 0px auto;
+      display: flex;
+      align-items: center;
+      input{
+        margin-right: 5px;
+      }
     }
     .formbtn{
       height: 35px;
@@ -138,6 +147,10 @@
           object-fit: cover;
           
         }
+      }
+      .remember{
+        margin: 0px 0px 0px 20px;
+        color: #fff;        
       }
       .formbtn{
         margin: 0 0px 0px 20px;

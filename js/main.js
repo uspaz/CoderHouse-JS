@@ -1,7 +1,6 @@
+// Arrays y DOM 
 const listaPokemons = [];
-let container = document.getElementById("pokemons");
-
-
+const container = document.getElementById("pokemons");
 class Pokemon {
   constructor(id, nombre, tipo1, tipo2, url) {
     this.id = id;
@@ -11,34 +10,35 @@ class Pokemon {
     this.image = url;
   }
 }
+// Cargo los pokemons hardcodeados para el array
+listaPokemons.push(new Pokemon("001", "Squirtle", "Agua","", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png"));
+listaPokemons.push(new Pokemon("002", "Bulbasaur", "Planta","Veneno", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"));
+listaPokemons.push(new Pokemon("003", "Charmander", "Fuego","", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"));
+listaPokemons.push(new Pokemon("004", "Abra", "Psiquico","", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/63.png"));
+listaPokemons.push(new Pokemon("005", "Pikachu", "Electrico","", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/pikachu-partner.png"));
+listaPokemons.push(new Pokemon("006", "Machop", "Lucha","", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/66.png"));
+listaPokemons.push(new Pokemon("007", "Larvitar", "Roca","Tierra", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/246.png"));
+listaPokemons.push(new Pokemon("008", "Ralts", "Psiquico","Hada", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/280.png"));
+listaPokemons.push(new Pokemon("009", "Lapras", "Agua", "Hielo", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/131.png"));
 
-listaPokemons.push(new Pokemon("#001", "Squirtle", "Agua","", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png"));
-listaPokemons.push(new Pokemon("#002", "Bulbasaur", "Planta","Veneno", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"));
-listaPokemons.push(new Pokemon("#003", "Charmander", "Fuego","", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"));
-listaPokemons.push(new Pokemon("#004", "Abra", "Psiquico","", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/63.png"));
-listaPokemons.push(new Pokemon("#005", "Pikachu", "Electrico","", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/pikachu-partner.png"));
-listaPokemons.push(new Pokemon("#006", "Machop", "Lucha","", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/66.png"));
-listaPokemons.push(new Pokemon("#007", "Larvitar", "Roca","Tierra", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/246.png"));
-listaPokemons.push(new Pokemon("#008", "Ralts", "Psiquico","Hada", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/280.png"));
-
+// Muestro los pokemons que tengo según la cantidad de elementos que utilice
 function mostrarPokemons(){
   listaPokemons.forEach((pokemon) => {
     let card = document.createElement("div");
     card.classList.add("card");
     if(pokemon.tipoSecundario == ""){
       card.innerHTML = 
-      `<div class="card">
+      `
         <figure class="card--image">
           <img src="${pokemon.image}" alt="">
         </figure>
         <div class="card--data">
-          <p>${pokemon.id}</p>
+          <p>#${pokemon.id}</p>
           <h2>${pokemon.nombre}</h2>
         </div>
         <div class="card--type">
           <span class="${(pokemon.tipoPrincipal).toLowerCase()}">${pokemon.tipoPrincipal}</span>
-        </div>
-      </div>`
+        </div>`
       container.appendChild(card);
     }else{
     card.innerHTML = 
@@ -47,7 +47,7 @@ function mostrarPokemons(){
           <img src="${pokemon.image}" alt="">
         </figure>
         <div class="card--data">
-          <p>${pokemon.id}</p>
+          <p>#${pokemon.id}</p>
           <h2>${pokemon.nombre}</h2>
         </div>
         <div class="card--type">
@@ -58,18 +58,36 @@ function mostrarPokemons(){
     }
   });
 }
+
+// Agrego los filtros cuando esta en vista mobile para que el usuario los pueda visualizar
 function mostrarFiltros(){
   let filtros = document.querySelector(".ul--filter");
 
   document.getElementById("filtrar").addEventListener("click", () =>{
-    if(filtros.classList.contains("active") == false){
-      filtros.classList.add("active");
-    }
+    filtros.classList.contains("active") == false && filtros.classList.add("active");
   });
+  
   document.getElementById("close").addEventListener("click", () =>{
     filtros.classList.remove("active");
   });
-} 
+}
 
-mostrarPokemons();
-mostrarFiltros();
+// Recupero el usuario guardado en el LocalStorage
+function recuperarUsuario() {
+  let perfil = JSON.parse(localStorage.getItem("usuario"));
+  let usuario = document.getElementById("usuario");
+  for (const user of perfil) {
+    usuario.innerHTML = `<p style="color: white;">${user.nombre}</p>`
+  }
+}
+  
+// Función que recolecta todas las funcionalidades del sitio para comenzar
+function inciar() {
+  mostrarPokemons();
+  mostrarFiltros();
+  recuperarUsuario();
+}
+
+document.addEventListener("DOMContentLoaded", ()=>{
+  inciar();
+});

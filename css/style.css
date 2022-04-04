@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@200;300;400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -31,7 +32,8 @@
       left: 10px;
       padding: 0px 10px;
       font-size: 14px;
-      font-family: 'Spartan', sans-serif; }
+      font-family: 'Spartan', sans-serif;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4); }
       .header .header__section--filter input::placeholder {
         text-align: center;
         font-size: 14px;
@@ -46,30 +48,30 @@
       left: 30px;
       top: 2px; }
     .header .header__section--filter .ul--filter {
-      display: none; }
-    .header .header__section--filter .active {
       position: absolute;
       top: 0;
       height: 100vh;
       width: 100%;
-      display: flex;
       background-color: #14213d;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-around;
-      z-index: 1; }
-      .header .header__section--filter .active .ul__close {
+      opacity: 0;
+      pointer-events: none;
+      z-index: 1;
+      transition: opacity  .8s; }
+      .header .header__section--filter .ul--filter .ul__close {
         width: 100%;
         color: #fee440;
         font-size: 35px;
         display: flex;
         justify-content: flex-end;
         padding-right: 20px; }
-      .header .header__section--filter .active .ul__item {
+      .header .header__section--filter .ul--filter .ul__item {
         list-style: none;
         padding: 15px; }
-        .header .header__section--filter .active .ul__item button {
+        .header .header__section--filter .ul--filter .ul__item button {
           width: 100%;
           padding: 10px;
           list-style: none;
@@ -80,6 +82,10 @@
           font-family: 'Varela Round', sans-serif;
           background-color: transparent;
           padding: 0px; }
+    .header .header__section--filter .active {
+      opacity: 1;
+      pointer-events: unset;
+      transition: opacity .8s; }
 
 .main {
   height: 100vh;
@@ -105,7 +111,7 @@
     background-color: #fee3a8;
     border-radius: 10px;
     font-family: 'Work Sans', sans-serif;
-    box-shadow: 0px 0px 20px 2px rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.5);
     z-index: 1; }
     .main .form .session {
       height: 100%;
@@ -140,6 +146,13 @@
             outline: none; }
     .main .form .image {
       display: none; }
+    .main .form .remember {
+      height: auto;
+      margin: 0px auto;
+      display: flex;
+      align-items: center; }
+      .main .form .remember input {
+        margin-right: 5px; }
     .main .form .formbtn {
       height: 35px;
       width: 50%;
@@ -197,6 +210,9 @@
           height: 100%;
           width: 100%;
           object-fit: cover; }
+      .main .form .remember {
+        margin: 0px 0px 0px 20px;
+        color: #fff; }
       .main .form .formbtn {
         margin: 0 0px 0px 20px;
         background-color: #fee3a8;
@@ -265,7 +281,7 @@
       width: 300px;
       height: 350px;
       border-radius: 10px;
-      background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 33.33%, rgba(0, 0, 0, 0.12) 100%); }
+      background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 33.33%, rgba(0, 0, 0, 0.2) 100%); }
       .main--pokedex .container__pokemons .card .card--image {
         width: 240px;
         margin: 0px auto; }
@@ -285,7 +301,7 @@
         display: flex;
         justify-content: space-around;
         align-items: center; }
-        .main--pokedex .container__pokemons .card .card--type .planta, .main--pokedex .container__pokemons .card .card--type .veneno, .main--pokedex .container__pokemons .card .card--type .fuego, .main--pokedex .container__pokemons .card .card--type .agua, .main--pokedex .container__pokemons .card .card--type .hada, .main--pokedex .container__pokemons .card .card--type .psiquico, .main--pokedex .container__pokemons .card .card--type .roca, .main--pokedex .container__pokemons .card .card--type .tierra, .main--pokedex .container__pokemons .card .card--type .electrico, .main--pokedex .container__pokemons .card .card--type .lucha {
+        .main--pokedex .container__pokemons .card .card--type .planta, .main--pokedex .container__pokemons .card .card--type .veneno, .main--pokedex .container__pokemons .card .card--type .fuego, .main--pokedex .container__pokemons .card .card--type .agua, .main--pokedex .container__pokemons .card .card--type .hada, .main--pokedex .container__pokemons .card .card--type .psiquico, .main--pokedex .container__pokemons .card .card--type .roca, .main--pokedex .container__pokemons .card .card--type .tierra, .main--pokedex .container__pokemons .card .card--type .electrico, .main--pokedex .container__pokemons .card .card--type .lucha, .main--pokedex .container__pokemons .card .card--type .hielo {
           width: 130px;
           height: 35px;
           display: flex;
@@ -316,6 +332,8 @@
           background-color: #f5cc00; }
         .main--pokedex .container__pokemons .card .card--type .lucha {
           background-color: #dc2f02; }
+        .main--pokedex .container__pokemons .card .card--type .hielo {
+          background-color: #48cae4; }
   .main--pokedex .pages {
     max-width: 500px;
     display: flex;
@@ -330,6 +348,222 @@
       color: #d90429; }
 
 .footer {
-  height: 70px;
+  height: 150px;
   width: 100%;
-  background-color: black; }
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0px; }
+  .footer .ft__derechos {
+    height: auto;
+    color: #fff;
+    font-family: 'Quicksand', sans-serif; }
+  .footer .ft__redes .redes__ul {
+    display: flex;
+    list-style: none;
+    justify-content: center; }
+    .footer .ft__redes .redes__ul .item {
+      margin: 10px 15px;
+      font-size: 25px; }
+      .footer .ft__redes .redes__ul .item .instagram {
+        color: #e4405f; }
+      .footer .ft__redes .redes__ul .item .linkedin {
+        color: #0077b6; }
+      .footer .ft__redes .redes__ul .item .whatsapp {
+        color: #20d466; }
+      .footer .ft__redes .redes__ul .item:hover {
+        transition: .5s;
+        transform: translateY(-2px);
+        cursor: pointer; }
+  .footer .ft__session {
+    height: 70px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around; }
+    .footer .ft__session .btn {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 500;
+      border: none;
+      border-radius: 5px;
+      width: 80px;
+      height: 30px;
+      background: #e63946;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer; }
+      .footer .ft__session .btn i {
+        margin-right: 8px; }
+      .footer .ft__session .btn:hover {
+        color: #e63946;
+        background-color: #fff;
+        transition: .5s; }
+
+@media only screen and (min-width: 600px) {
+  .main--pokedex .container__pokemons .card {
+    width: 250px;
+    height: 300px; }
+    .main--pokedex .container__pokemons .card .card--image {
+      width: 190px; }
+    .main--pokedex .container__pokemons .card .card--type .planta, .main--pokedex .container__pokemons .card .card--type .veneno, .main--pokedex .container__pokemons .card .card--type .fuego, .main--pokedex .container__pokemons .card .card--type .agua, .main--pokedex .container__pokemons .card .card--type .hada, .main--pokedex .container__pokemons .card .card--type .psiquico, .main--pokedex .container__pokemons .card .card--type .roca, .main--pokedex .container__pokemons .card .card--type .tierra, .main--pokedex .container__pokemons .card .card--type .electrico, .main--pokedex .container__pokemons .card .card--type .lucha, .main--pokedex .container__pokemons .card .card--type .hielo {
+      width: 115px;
+      font-size: 19px; }
+  .main--pokedex .pages {
+    font-size: 25px; } }
+
+@media only screen and (min-width: 768px) {
+  .body {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: repeat(2, auto); }
+    .body .header {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .body .header .header__section--title {
+        height: 150px;
+        width: 100%;
+        padding: 0px;
+        align-items: center; }
+        .body .header .header__section--title img {
+          height: 80px;
+          width: 226px; }
+      .body .header .header__section--filter {
+        height: 700px;
+        width: 90%;
+        margin-top: 50px;
+        background-color: #9799ff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 0px 10px;
+        border-radius: 10px;
+        position: relative;
+        gap: 40px; }
+        .body .header .header__section--filter input {
+          top: -30px;
+          left: 0; }
+        .body .header .header__section--filter span {
+          display: none; }
+        .body .header .header__section--filter .ul--filter {
+          position: relative;
+          top: 0;
+          opacity: 1;
+          pointer-events: unset;
+          height: auto;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 30px 0px;
+          background: none; }
+          .body .header .header__section--filter .ul--filter .ul__close {
+            display: none; }
+          .body .header .header__section--filter .ul--filter .ul__item {
+            height: 35px;
+            width: 190px;
+            padding: 0px; }
+            .body .header .header__section--filter .ul--filter .ul__item button {
+              height: 100%;
+              width: 100%;
+              border-radius: 10px;
+              border: none;
+              font-size: 16px;
+              font-family: 'Varela Round', sans-serif;
+              box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+              background-color: #fff;
+              color: #000;
+              cursor: pointer; }
+              .body .header .header__section--filter .ul--filter .ul__item button:hover {
+                outline: none;
+                background: #fee440; }
+    .body .main--pokedex {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2; }
+      .body .main--pokedex .container__pokemons {
+        padding-top: 200px;
+        gap: 20px; }
+        .body .main--pokedex .container__pokemons .card {
+          height: 250px;
+          width: 200px; }
+          .body .main--pokedex .container__pokemons .card .card--image {
+            width: 140px; }
+          .body .main--pokedex .container__pokemons .card .card--data p {
+            font-size: 16px; }
+          .body .main--pokedex .container__pokemons .card .card--data h2 {
+            font-size: 20px; }
+          .body .main--pokedex .container__pokemons .card .card--type .planta, .body .main--pokedex .container__pokemons .card .card--type .veneno, .body .main--pokedex .container__pokemons .card .card--type .fuego, .body .main--pokedex .container__pokemons .card .card--type .agua, .body .main--pokedex .container__pokemons .card .card--type .hada, .body .main--pokedex .container__pokemons .card .card--type .psiquico, .body .main--pokedex .container__pokemons .card .card--type .roca, .body .main--pokedex .container__pokemons .card .card--type .tierra, .body .main--pokedex .container__pokemons .card .card--type .electrico, .body .main--pokedex .container__pokemons .card .card--type .lucha, .body .main--pokedex .container__pokemons .card .card--type .hielo {
+            width: 90px;
+            font-size: 16px; }
+    .body .footer {
+      height: 70px;
+      grid-column: 1 / 3;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0px 20px; }
+      .body .footer .ft__derechos {
+        width: 200px;
+        text-align: center; }
+      .body .footer .ft__session {
+        width: 200px;
+        flex-direction: row;
+        justify-content: space-evenly; } }
+
+@media only screen and (min-width: 1024px) {
+  .body {
+    grid-template-columns: 35% 65%; }
+    .body .header .header__section--title img {
+      height: 100px;
+      width: 266px; }
+    .body .header__section--filter {
+      width: 85%; } }
+
+@media only screen and (min-width: 1200px) {
+  .body {
+    grid-template-columns: 30% 70%; }
+    .body .header .header__section--filter .ul--filter {
+      padding: 0px 20px; }
+    .body .main--pokedex .container__pokemons .card {
+      width: 250px;
+      height: 280px; }
+      .body .main--pokedex .container__pokemons .card .card--image {
+        width: 170px; }
+      .body .main--pokedex .container__pokemons .card .card--data p {
+        font-size: 18px; }
+      .body .main--pokedex .container__pokemons .card .card--data h2 {
+        font-size: 22px; }
+      .body .main--pokedex .container__pokemons .card .card--type .planta, .body .main--pokedex .container__pokemons .card .card--type .veneno, .body .main--pokedex .container__pokemons .card .card--type .fuego, .body .main--pokedex .container__pokemons .card .card--type .agua, .body .main--pokedex .container__pokemons .card .card--type .hada, .body .main--pokedex .container__pokemons .card .card--type .psiquico, .body .main--pokedex .container__pokemons .card .card--type .roca, .body .main--pokedex .container__pokemons .card .card--type .tierra, .body .main--pokedex .container__pokemons .card .card--type .electrico, .body .main--pokedex .container__pokemons .card .card--type .lucha, .body .main--pokedex .container__pokemons .card .card--type .hielo {
+        width: 115px;
+        font-size: 18px; }
+    .body .footer .ft__redes .redes__ul .item {
+      font-size: 30px; } }
+
+@media only screen and (min-width: 1440px) {
+  .body {
+    grid-template-columns: 25% 75%; }
+    .body .header .header__section--filter {
+      max-width: 340px; }
+      .body .header .header__section--filter .ul--filter {
+        padding: 0px 40px; }
+    .body .main--pokedex .container__pokemons {
+      gap: 40px; }
+      .body .main--pokedex .container__pokemons .card {
+        width: 300px;
+        height: 310px; }
+        .body .main--pokedex .container__pokemons .card .card--image {
+          width: 190px; }
+        .body .main--pokedex .container__pokemons .card .card--data p {
+          font-size: 20px; }
+        .body .main--pokedex .container__pokemons .card .card--data h2 {
+          font-size: 24px; }
+        .body .main--pokedex .container__pokemons .card .card--type .planta, .body .main--pokedex .container__pokemons .card .card--type .veneno, .body .main--pokedex .container__pokemons .card .card--type .fuego, .body .main--pokedex .container__pokemons .card .card--type .agua, .body .main--pokedex .container__pokemons .card .card--type .hada, .body .main--pokedex .container__pokemons .card .card--type .psiquico, .body .main--pokedex .container__pokemons .card .card--type .roca, .body .main--pokedex .container__pokemons .card .card--type .tierra, .body .main--pokedex .container__pokemons .card .card--type .electrico, .body .main--pokedex .container__pokemons .card .card--type .lucha, .body .main--pokedex .container__pokemons .card .card--type .hielo {
+          width: 130px;
+          font-size: 22px; } }

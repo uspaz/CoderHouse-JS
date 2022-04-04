@@ -1,5 +1,66 @@
 .footer{
-  height: 70px;
+  height: 150px;
   width: 100%;
   background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0px;
+  .ft__derechos{
+    height: auto;
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+  }
+  .ft__redes{
+    .redes__ul{
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      .item{
+        margin: 10px 15px;
+        font-size: 25px;
+        @each $name, $color in $redes{
+          .#{$name}{
+            color: $color
+          }
+        }
+        &:hover{
+          transition: .5s;
+          transform: translateY(-2px);
+          cursor: pointer;
+        }
+      }
+    }  
+  }
+  .ft__session{
+    height: 70px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    .btn{
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 500;
+      border: none;
+      border-radius: 5px;
+      width: 80px;
+      height: 30px;
+      background: #e63946;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      i{
+        margin-right: 8px;
+      }
+      &:hover{
+        color: #e63946;
+        background-color: #fff;
+        transition: .5s;
+      }
+    }
+  }
 }
