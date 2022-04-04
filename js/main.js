@@ -1,6 +1,8 @@
 // Arrays y DOM 
 const listaPokemons = [];
 const container = document.getElementById("pokemons");
+const salir = document.querySelector(".btn");
+
 class Pokemon {
   constructor(id, nombre, tipo1, tipo2, url) {
     this.id = id;
@@ -80,12 +82,20 @@ function recuperarUsuario() {
     usuario.innerHTML = `<p style="color: white;">${user.nombre}</p>`
   }
 }
-  
+
+function signOut(){
+  salir.addEventListener("click", ()=>{ 
+    localStorage.clear();
+    sessionStorage.clear();
+    location.href = "../index.html"; 
+  });
+}
 // Función que recolecta todas las funcionalidades del sitio para comenzar
 function inciar() {
   mostrarPokemons();
   mostrarFiltros();
   recuperarUsuario();
+  signOut();
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{

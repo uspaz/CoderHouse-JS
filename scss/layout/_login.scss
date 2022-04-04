@@ -65,6 +65,11 @@
     .image{
       display: none;
     }
+    .faltan{
+      padding: 0px 20px;
+      text-align: center;
+      font-size: 15px;
+    }
     .remember{
       height: auto;
       margin: 0px auto;
@@ -147,6 +152,12 @@
           object-fit: cover;
           
         }
+      }
+      .faltan{
+        text-align: left;
+        color: #d90429;
+        font-size: 16px;
+        font-weight: 600;
       }
       .remember{
         margin: 0px 0px 0px 20px;
