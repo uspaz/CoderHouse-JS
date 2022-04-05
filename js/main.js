@@ -1,8 +1,7 @@
 // Arrays y acceso al DOM 
 const listaPokemons = [];
 const container = document.getElementById("pokemons");
-const salir = document.querySelector(".btn");
-
+let usuario = document.getElementById("usuario");
 class Pokemon {
   constructor(id, nombre, tipo1, tipo2, url) {
     this.id = id;
@@ -76,17 +75,23 @@ function mostrarFiltros(){
 
 // Recupero el usuario guardado en el LocalStorage
 function recuperarUsuario() {
-  let perfil = JSON.parse(localStorage.getItem("usuario"));
-  let usuario = document.getElementById("usuario");
-  for (const user of perfil) {
-    usuario.innerHTML = `<p">${user.nombre}</p>`
+  if(localStorage.length > 0){
+    let local = JSON.parse(localStorage.getItem("usuario"));
+    let {nombre} = local[0];
+    usuario.innerHTML = `<p style="color:white">${nombre}</p>`;
+  }else{
+    let session = JSON.parse(sessionStorage.getItem("usuario"));
+    let {nombre} = session[0];
+    usuario.innerHTML = `<p style="color:white">${nombre}</p>`;
   }
 }
 
+
 // Al utilizar el boton salir vuelve al login y borra los datos del localStorage 
 function signOut(){
-  salir.addEventListener("click", ()=>{ 
+  document.querySelector(".btn").addEventListener("click", ()=>{ 
     localStorage.clear();
+    sessionStorage.clear();
     location.href = "../index.html"; 
   });
 }
