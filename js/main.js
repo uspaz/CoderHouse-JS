@@ -1,4 +1,4 @@
-// Arrays y DOM 
+// Arrays y acceso al DOM 
 const listaPokemons = [];
 const container = document.getElementById("pokemons");
 const salir = document.querySelector(".btn");
@@ -61,7 +61,7 @@ function mostrarPokemons(){
   });
 }
 
-// Agrego los filtros cuando esta en vista mobile para que el usuario los pueda visualizar
+// Agrego y quito los filtros cuando esta en vista mobile para que el usuario los pueda visualizar
 function mostrarFiltros(){
   let filtros = document.querySelector(".ul--filter");
 
@@ -79,14 +79,14 @@ function recuperarUsuario() {
   let perfil = JSON.parse(localStorage.getItem("usuario"));
   let usuario = document.getElementById("usuario");
   for (const user of perfil) {
-    usuario.innerHTML = `<p style="color: white;">${user.nombre}</p>`
+    usuario.innerHTML = `<p">${user.nombre}</p>`
   }
 }
 
+// Al utilizar el boton salir vuelve al login y borra los datos del localStorage 
 function signOut(){
   salir.addEventListener("click", ()=>{ 
     localStorage.clear();
-    sessionStorage.clear();
     location.href = "../index.html"; 
   });
 }
