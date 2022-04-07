@@ -276,7 +276,8 @@
 .main--pokedex {
   height: auto;
   width: 100%;
-  background-color: #f6ee2b; }
+  background-color: #f6ee2b;
+  padding-bottom: 22px; }
   .main--pokedex .container__pokemons {
     height: auto;
     width: 100%;
@@ -413,16 +414,21 @@
         transition: .5s; }
 
 @media only screen and (min-width: 600px) {
-  .main--pokedex .container__pokemons .card {
-    width: 250px;
-    height: 300px; }
-    .main--pokedex .container__pokemons .card .card--image {
-      width: 190px; }
-    .main--pokedex .container__pokemons .card .card--type .planta, .main--pokedex .container__pokemons .card .card--type .veneno, .main--pokedex .container__pokemons .card .card--type .fuego, .main--pokedex .container__pokemons .card .card--type .agua, .main--pokedex .container__pokemons .card .card--type .hada, .main--pokedex .container__pokemons .card .card--type .psiquico, .main--pokedex .container__pokemons .card .card--type .roca, .main--pokedex .container__pokemons .card .card--type .tierra, .main--pokedex .container__pokemons .card .card--type .electrico, .main--pokedex .container__pokemons .card .card--type .lucha, .main--pokedex .container__pokemons .card .card--type .hielo {
-      width: 115px;
-      font-size: 19px; }
-  .main--pokedex .pages {
-    font-size: 25px; } }
+  .main--pokedex {
+    padding-bottom: 30px; }
+    .main--pokedex .container__pokemons .card {
+      width: 250px;
+      height: 300px; }
+      .main--pokedex .container__pokemons .card .card--image {
+        width: 190px; }
+      .main--pokedex .container__pokemons .card .card--type .planta, .main--pokedex .container__pokemons .card .card--type .veneno, .main--pokedex .container__pokemons .card .card--type .fuego, .main--pokedex .container__pokemons .card .card--type .agua, .main--pokedex .container__pokemons .card .card--type .hada, .main--pokedex .container__pokemons .card .card--type .psiquico, .main--pokedex .container__pokemons .card .card--type .roca, .main--pokedex .container__pokemons .card .card--type .tierra, .main--pokedex .container__pokemons .card .card--type .electrico, .main--pokedex .container__pokemons .card .card--type .lucha, .main--pokedex .container__pokemons .card .card--type .hielo {
+        width: 115px;
+        font-size: 19px; }
+    .main--pokedex .pages {
+      font-size: 25px; }
+  .footer {
+    height: 200px;
+    padding: 20px 0px; } }
 
 @media only screen and (min-width: 768px) {
   .body {
@@ -436,7 +442,8 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center; }
+      align-items: center;
+      padding-bottom: 20px; }
       .body .header .header__section--title {
         height: 150px;
         width: 100%;

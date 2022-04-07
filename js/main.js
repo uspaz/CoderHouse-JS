@@ -1,6 +1,5 @@
 // Arrays y acceso al DOM 
 const listaPokemons = [];
-const container = document.getElementById("pokemons");
 let usuario = document.getElementById("usuario");
 class Pokemon {
   constructor(id, nombre, tipo1, tipo2, url) {
@@ -23,40 +22,40 @@ listaPokemons.push(new Pokemon("008", "Ralts", "Psiquico","Hada", "https://raw.g
 listaPokemons.push(new Pokemon("009", "Lapras", "Agua", "Hielo", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/131.png"));
 
 // Muestro los pokemons que tengo según la cantidad de elementos que utilice
-function mostrarPokemons(){
-  listaPokemons.forEach((pokemon) => {
-    let card = document.createElement("div");
-    card.classList.add("card");
+function mostrarPokemons(lista){
+  let container = "";
+  lista.forEach((pokemon) => {
     if(pokemon.tipoSecundario == ""){
-      card.innerHTML = 
-      `
-        <figure class="card--image">
-          <img src="${pokemon.image}" alt="">
-        </figure>
-        <div class="card--data">
-          <p>#${pokemon.id}</p>
-          <h2>${pokemon.nombre}</h2>
-        </div>
-        <div class="card--type">
-          <span class="${(pokemon.tipoPrincipal).toLowerCase()}">${pokemon.tipoPrincipal}</span>
+      container += 
+      `<div class="card">
+          <figure class="card--image">
+            <img src="${pokemon.image}" alt="">
+          </figure>
+          <div class="card--data">
+            <p>#${pokemon.id}</p>
+            <h2>${pokemon.nombre}</h2>
+          </div>
+          <div class="card--type">
+            <span class="${(pokemon.tipoPrincipal).toLowerCase()}">${pokemon.tipoPrincipal}</span>
+          </div>
         </div>`
-      container.appendChild(card);
     }else{
-    card.innerHTML = 
-      `
-        <figure class="card--image">
-          <img src="${pokemon.image}" alt="">
-        </figure>
-        <div class="card--data">
-          <p>#${pokemon.id}</p>
-          <h2>${pokemon.nombre}</h2>
-        </div>
-        <div class="card--type">
-          <span class="${(pokemon.tipoPrincipal).toLowerCase()}">${pokemon.tipoPrincipal}</span>
-          <span class="${(pokemon.tipoSecundario).toLowerCase()}">${pokemon.tipoSecundario}</span>
+      container += 
+      `<div class="card">
+          <figure class="card--image">
+            <img src="${pokemon.image}" alt="">
+          </figure>
+          <div class="card--data">
+            <p>#${pokemon.id}</p>
+            <h2>${pokemon.nombre}</h2>
+          </div>
+          <div class="card--type">
+            <span class="${(pokemon.tipoPrincipal).toLowerCase()}">${pokemon.tipoPrincipal}</span>
+            <span class="${(pokemon.tipoSecundario).toLowerCase()}">${pokemon.tipoSecundario}</span>
+          </div>
         </div>`;
-      container.appendChild(card);
     }
+    document.getElementById("pokemons").innerHTML = container;
   });
 }
 
@@ -95,9 +94,22 @@ function signOut(){
     location.href = "../index.html"; 
   });
 }
+
+function busqueda(){
+  let search = document.getElementById("buscar").value;
+  
+  let listaFiltrada = listaPokemons.filter(element =>{
+    return element.nombre.toLowerCase().indexOf(search.toLowerCase()) > -1
+  });
+  mostrarPokemons(listaFiltrada);
+}
+document.getElementById("buscar").addEventListener("keyup", ()=>{
+  busqueda();
+})
+
 // Función que recolecta todas las funcionalidades del sitio para comenzar
 function inciar() {
-  mostrarPokemons();
+  mostrarPokemons(listaPokemons);
   mostrarFiltros();
   recuperarUsuario();
   signOut();
