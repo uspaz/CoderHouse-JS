@@ -89,9 +89,22 @@ function recuperarUsuario() {
 // Al utilizar el boton salir vuelve al login y borra los datos del localStorage 
 function signOut(){
   document.querySelector(".btn").addEventListener("click", ()=>{ 
-    localStorage.clear();
-    sessionStorage.clear();
-    location.href = "../index.html"; 
+    Swal.fire({
+      icon: 'warning',
+      title: '<h3 style="font-family: Quicksand">¿Estas seguro?</h3>',
+      showCancelButton: true,
+      confirmButtonText: '<span style="font-family: Quicksand">Quiero salir</span>',
+      confirmButtonColor: '#d33',
+      cancelButtonText: '<span style="font-family: Quicksand">Mejor me quedo</span>',
+      cancelButtonColor: '#3085d6'
+    }).then(res =>{
+      if(res.isConfirmed){
+        localStorage.clear();
+        sessionStorage.clear();
+        location.href = "../index.html"; 
+      }
+    });
+    
   });
 }
 
