@@ -305,13 +305,15 @@
           font-size: 18px; }
         .main--pokedex .container__pokemons .card .card--data h2 {
           font-size: 25px; }
+          .main--pokedex .container__pokemons .card .card--data h2::first-letter {
+            text-transform: uppercase; }
       .main--pokedex .container__pokemons .card .card--type {
         height: 50px;
         width: 100%;
         display: flex;
         justify-content: space-around;
         align-items: center; }
-        .main--pokedex .container__pokemons .card .card--type .planta, .main--pokedex .container__pokemons .card .card--type .veneno, .main--pokedex .container__pokemons .card .card--type .fuego, .main--pokedex .container__pokemons .card .card--type .agua, .main--pokedex .container__pokemons .card .card--type .hada, .main--pokedex .container__pokemons .card .card--type .psiquico, .main--pokedex .container__pokemons .card .card--type .roca, .main--pokedex .container__pokemons .card .card--type .tierra, .main--pokedex .container__pokemons .card .card--type .electrico, .main--pokedex .container__pokemons .card .card--type .lucha, .main--pokedex .container__pokemons .card .card--type .hielo {
+        .main--pokedex .container__pokemons .card .card--type .grass, .main--pokedex .container__pokemons .card .card--type .poison, .main--pokedex .container__pokemons .card .card--type .fire, .main--pokedex .container__pokemons .card .card--type .water, .main--pokedex .container__pokemons .card .card--type .fairy, .main--pokedex .container__pokemons .card .card--type .psychic, .main--pokedex .container__pokemons .card .card--type .rock, .main--pokedex .container__pokemons .card .card--type .ground, .main--pokedex .container__pokemons .card .card--type .electric, .main--pokedex .container__pokemons .card .card--type .fighting, .main--pokedex .container__pokemons .card .card--type .ice {
           width: 130px;
           height: 35px;
           display: flex;
@@ -324,25 +326,25 @@
           background-color: #67CB4F;
           border-radius: 10px;
           text-shadow: #000000 3px 2px 4px; }
-        .main--pokedex .container__pokemons .card .card--type .veneno {
+        .main--pokedex .container__pokemons .card .card--type .poison {
           background-color: #7b2cbf; }
-        .main--pokedex .container__pokemons .card .card--type .fuego {
+        .main--pokedex .container__pokemons .card .card--type .fire {
           background-color: #fd7d24; }
-        .main--pokedex .container__pokemons .card .card--type .agua {
+        .main--pokedex .container__pokemons .card .card--type .water {
           background-color: #4592c4; }
-        .main--pokedex .container__pokemons .card .card--type .hada {
+        .main--pokedex .container__pokemons .card .card--type .fairy {
           background-color: #ff99ac; }
-        .main--pokedex .container__pokemons .card .card--type .psiquico {
+        .main--pokedex .container__pokemons .card .card--type .psychic {
           background-color: #e05780; }
-        .main--pokedex .container__pokemons .card .card--type .roca {
+        .main--pokedex .container__pokemons .card .card--type .rock {
           background-color: #926c15; }
-        .main--pokedex .container__pokemons .card .card--type .tierra {
+        .main--pokedex .container__pokemons .card .card--type .ground {
           background-color: #bf8f00; }
-        .main--pokedex .container__pokemons .card .card--type .electrico {
+        .main--pokedex .container__pokemons .card .card--type .electric {
           background-color: #f5cc00; }
-        .main--pokedex .container__pokemons .card .card--type .lucha {
+        .main--pokedex .container__pokemons .card .card--type .fighting {
           background-color: #dc2f02; }
-        .main--pokedex .container__pokemons .card .card--type .hielo {
+        .main--pokedex .container__pokemons .card .card--type .ice {
           background-color: #48cae4; }
   .main--pokedex .pages {
     max-width: 500px;
@@ -421,7 +423,7 @@
       height: 300px; }
       .main--pokedex .container__pokemons .card .card--image {
         width: 190px; }
-      .main--pokedex .container__pokemons .card .card--type .planta, .main--pokedex .container__pokemons .card .card--type .veneno, .main--pokedex .container__pokemons .card .card--type .fuego, .main--pokedex .container__pokemons .card .card--type .agua, .main--pokedex .container__pokemons .card .card--type .hada, .main--pokedex .container__pokemons .card .card--type .psiquico, .main--pokedex .container__pokemons .card .card--type .roca, .main--pokedex .container__pokemons .card .card--type .tierra, .main--pokedex .container__pokemons .card .card--type .electrico, .main--pokedex .container__pokemons .card .card--type .lucha, .main--pokedex .container__pokemons .card .card--type .hielo {
+      .main--pokedex .container__pokemons .card .card--type .planta {
         width: 115px;
         font-size: 19px; }
     .main--pokedex .pages {
@@ -516,7 +518,7 @@
             font-size: 16px; }
           .body .main--pokedex .container__pokemons .card .card--data h2 {
             font-size: 20px; }
-          .body .main--pokedex .container__pokemons .card .card--type .planta, .body .main--pokedex .container__pokemons .card .card--type .veneno, .body .main--pokedex .container__pokemons .card .card--type .fuego, .body .main--pokedex .container__pokemons .card .card--type .agua, .body .main--pokedex .container__pokemons .card .card--type .hada, .body .main--pokedex .container__pokemons .card .card--type .psiquico, .body .main--pokedex .container__pokemons .card .card--type .roca, .body .main--pokedex .container__pokemons .card .card--type .tierra, .body .main--pokedex .container__pokemons .card .card--type .electrico, .body .main--pokedex .container__pokemons .card .card--type .lucha, .body .main--pokedex .container__pokemons .card .card--type .hielo {
+          .body .main--pokedex .container__pokemons .card .card--type .planta {
             width: 90px;
             font-size: 16px; }
     .body .footer {
@@ -556,7 +558,7 @@
         font-size: 18px; }
       .body .main--pokedex .container__pokemons .card .card--data h2 {
         font-size: 22px; }
-      .body .main--pokedex .container__pokemons .card .card--type .planta, .body .main--pokedex .container__pokemons .card .card--type .veneno, .body .main--pokedex .container__pokemons .card .card--type .fuego, .body .main--pokedex .container__pokemons .card .card--type .agua, .body .main--pokedex .container__pokemons .card .card--type .hada, .body .main--pokedex .container__pokemons .card .card--type .psiquico, .body .main--pokedex .container__pokemons .card .card--type .roca, .body .main--pokedex .container__pokemons .card .card--type .tierra, .body .main--pokedex .container__pokemons .card .card--type .electrico, .body .main--pokedex .container__pokemons .card .card--type .lucha, .body .main--pokedex .container__pokemons .card .card--type .hielo {
+      .body .main--pokedex .container__pokemons .card .card--type .planta {
         width: 115px;
         font-size: 18px; }
     .body .footer .ft__redes .redes__ul .item {
@@ -580,6 +582,6 @@
           font-size: 20px; }
         .body .main--pokedex .container__pokemons .card .card--data h2 {
           font-size: 24px; }
-        .body .main--pokedex .container__pokemons .card .card--type .planta, .body .main--pokedex .container__pokemons .card .card--type .veneno, .body .main--pokedex .container__pokemons .card .card--type .fuego, .body .main--pokedex .container__pokemons .card .card--type .agua, .body .main--pokedex .container__pokemons .card .card--type .hada, .body .main--pokedex .container__pokemons .card .card--type .psiquico, .body .main--pokedex .container__pokemons .card .card--type .roca, .body .main--pokedex .container__pokemons .card .card--type .tierra, .body .main--pokedex .container__pokemons .card .card--type .electrico, .body .main--pokedex .container__pokemons .card .card--type .lucha, .body .main--pokedex .container__pokemons .card .card--type .hielo {
+        .body .main--pokedex .container__pokemons .card .card--type .planta {
           width: 130px;
           font-size: 22px; } }

@@ -33,6 +33,9 @@
         }
         h2{
           font-size: 25px;
+          &::first-letter{
+            text-transform: uppercase;
+          }
         }
       }
       .card--type{
@@ -41,7 +44,7 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        .planta{
+        .grass{
           width: 130px;
           height: 35px;
           display: flex;
@@ -55,44 +58,45 @@
           border-radius: 10px;
           text-shadow: #000000 3px 2px 4px;
         }
-        .veneno{
-          @extend .planta;
+        .poison{
+          @extend .grass;
           background-color: #7b2cbf;
         }
-        .fuego{
-          @extend .planta;
-          background-color: #fd7d24;
+        .fire{
+          @extend .grass;
+          background-color: #fd7d24;     
+               
         }
-        .agua{
-          @extend .planta;
+        .water{
+          @extend .grass;
           background-color: #4592c4;
         }
-        .hada{
-          @extend .planta;
+        .fairy{
+          @extend .grass;
           background-color: #ff99ac;
         }
-        .psiquico{
-          @extend .planta;
+        .psychic{
+          @extend .grass;
           background-color: #e05780;
         }
-        .roca{
-          @extend .planta;
+        .rock{
+          @extend .grass;
           background-color: #926c15;
         }
-        .tierra{
-          @extend .planta;
+        .ground{
+          @extend .grass;
           background-color: #bf8f00 ;
         }
-        .electrico{
-          @extend .planta;
+        .electric{
+          @extend .grass;
           background-color: #f5cc00;
         }
-        .lucha{
-          @extend .planta;
+        .fighting{
+          @extend .grass;
           background-color: #dc2f02;
         }
-        .hielo{
-          @extend .planta;
+        .ice{
+          @extend .grass;
           background-color: #48cae4;
         }
       }
