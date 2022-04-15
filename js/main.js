@@ -4,11 +4,16 @@ let usuario = document.getElementById("usuario");
 let offset = 1;
 let limit = 9;
 
+/* Hago llamado a la API y guardo sus datos dependiendo de un id para que vengan de a 1 y guardarlos en una variable para luego pushear esos datos al array */
 async function getPokemons(id) {
   const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`);
   const pokemons = await res.json();
   listaPokemons.push(pokemons);
 }
+
+
+/* Hago que evalue si hay algun pokemon en el array (en caso de que haya los saco), y luego cargo los pokemons utilizando otra función que al traer un pokemon
+ con su id (que se define gracias al indice del for y delimitado por las variables) deberia guardarlo en listaPokemons para luego mostrarla */
 
 function pagPokemons() {
   if(listaPokemons != []){
@@ -21,17 +26,23 @@ function pagPokemons() {
   }
   showPokemons(listaPokemons);
 }
+
+
 document.getElementById("siguiente").addEventListener("click", ()=>{
   offset += 9;
   limit += 9;
   pagPokemons();
 });
+
+
 document.getElementById("anterior").addEventListener("click", ()=>{
   offset -= 9;
   limit -= 9;
   pagPokemons();
 });
-// Muestro los pokemons que tengo según la cantidad de elementos que utilice
+
+
+/* Muestro los pokemons que tengo según la cantidad de elementos que utilice */
 function showPokemons(lista){
   let container = "";
   lista.forEach( (pokemon) => {
@@ -71,6 +82,7 @@ function showPokemons(lista){
   });
 }
 
+
 // Agrego y quito los filtros cuando esta en vista mobile para que el usuario los pueda visualizar
 function mostrarFiltros(){
   let filtros = document.querySelector(".ul--filter");
@@ -83,6 +95,7 @@ function mostrarFiltros(){
     filtros.classList.remove("active");
   });
 }
+
 
 // Recupero el usuario guardado en el LocalStorage
 function recuperarUsuario() {
@@ -134,8 +147,7 @@ document.getElementById("buscar").addEventListener("keyup", ()=>{
 
 
 document.addEventListener("DOMContentLoaded", ()=>{
-  getPokemons(3);
-  // pagPokemons();
+  pagPokemons();
   // mostrarFiltros();
   // recuperarUsuario();
   // signOut();
