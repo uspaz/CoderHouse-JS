@@ -36,7 +36,7 @@ function showPokemons(lista){
   let container = "";
   lista.forEach( (pokemon) => {
 
-    let {id, name , types} = lista;  
+    let {id, name , types} = pokemon;  
     if(types[1] == ""){
       container += 
       `<div class="card">
