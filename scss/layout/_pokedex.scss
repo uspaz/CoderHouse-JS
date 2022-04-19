@@ -60,7 +60,7 @@
         }
         .poison{
           @extend .grass;
-          background-color: #7b2cbf;
+          background-color: #8a5dc0;
         }
         .fire{
           @extend .grass;
@@ -98,6 +98,34 @@
         .ice{
           @extend .grass;
           background-color: #48cae4;
+        }
+        .flying{
+          @extend .grass;
+          background-color: #4a9daa;
+        }
+        .bug{
+          @extend .grass;
+          background-color: #358a48;
+        }
+        .normal{
+          @extend .grass;
+          background-color: #84919a;
+        }
+        .ghost{
+          @extend .grass;
+          background-color: #5b597e;
+        }
+        .dark{
+          @extend .grass;
+          background-color: #1c1d1d;
+        }
+        .dragon{
+          @extend .grass;
+          background-color: #41667e;
+        }
+        .steel{
+          @extend .grass;
+          background-color: #349e7a;
         }
       }
     }

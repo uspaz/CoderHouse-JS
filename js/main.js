@@ -1,72 +1,64 @@
 // Variables, Arrays y acceso al DOM 
-const listaPokemons = [];
 let usuario = document.getElementById("usuario");
 let offset = 1;
-let limit = 9;
+let limit = 12;
 
-/* Hago llamado a la API y guardo sus datos dependiendo de un id para que vengan de a 1 y guardarlos en una variable para luego pushear esos datos al array */
+/* Hago llamado a la API y guardo sus datos dependiendo de un id para que vengan de a 1 y voy creando su estructura para mostrarlos */
 async function getPokemons(id) {
   const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`);
   const pokemons = await res.json();
-  listaPokemons.push(pokemons);
+  showPokemons(pokemons);
 }
 
 
-/* Hago que evalue si hay algun pokemon en el array (en caso de que haya los saco), y luego cargo los pokemons utilizando otra función que al traer un pokemon
- con su id (que se define gracias al indice del for y delimitado por las variables) deberia guardarlo en listaPokemons para luego mostrarla */
+/* Muestro los pokemons utilizando otra función que al traer un pokemon con su id (que se define gracias al indice del for y delimitado por las variables) */
 
-function pagPokemons() {
-  if(listaPokemons != []){
-    listaPokemons.splice(0, listaPokemons.length);
-  }
+function paginacion() {
   if( offset >= 1){
     for (let i = offset; i <= limit; i++) {
       getPokemons(i);
     }
   }
-  showPokemons(listaPokemons);
 }
 
-
 document.getElementById("siguiente").addEventListener("click", ()=>{
-  offset += 9;
-  limit += 9;
-  pagPokemons();
+  offset += 12;
+  limit += 12;
+  paginacion();
 });
 
 
 document.getElementById("anterior").addEventListener("click", ()=>{
-  offset -= 9;
-  limit -= 9;
-  pagPokemons();
+  offset -= 12;
+  limit -= 12;
+  paginacion();
 });
 
 
-/* Muestro los pokemons que tengo según la cantidad de elementos que utilice */
-function showPokemons(lista){
+/* Realizo la estructura de como quiero que se vean los pokemons que tengo según la cantidad de elementos que utilice */
+function showPokemons(pokemon){
   let container = "";
-  lista.forEach( (pokemon) => {
 
-    let {id, name , types} = pokemon;  
-    if(types[1] == ""){
-      container += 
+  let {id, name , types} = pokemon;
+  if(types.length <= 1){
+    container += 
       `<div class="card">
-          <figure class="card--image">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png" alt="">
-          </figure>
-          <div class="card--data">
-            <p>#${id.toString().padStart(3, '0')}</p>
-            <h2>${name}</h2>
-          </div>
-          <div class="card--type">
-            <span class="${(types[0].type.name)}">${types[0].type.name}</span>
-          </div>
+            <figure class="card--image">
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png" alt="">
+            </figure>
+            <div class="card--data">
+              <p>#${id.toString().padStart(3, '0')}</p>
+              <h2>${name}</h2>
+            </div>
+            <div class="card--type">
+              <span class="${(pokemon.types[0].type.name)}">${pokemon.types[0].type.name}</span>
+            </div>
         </div>`
-    }else{
-      container += 
+  }else{
+    container += 
       `<div class="card">
           <figure class="card--image">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png" alt="">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png" alt="" lazy="loading">
           </figure>
           <div class="card--data">
           <p>#${id.toString().padStart(3, '0')}</p>
@@ -77,9 +69,8 @@ function showPokemons(lista){
             <span class="${(types[1].type.name)}">${types[1].type.name}</span>
           </div>
         </div>`;
-    }
-    document.getElementById("pokemons").innerHTML = container;
-  });
+  }
+   document.getElementById("pokemons").innerHTML += container;
 }
 
 
@@ -147,8 +138,8 @@ document.getElementById("buscar").addEventListener("keyup", ()=>{
 
 
 document.addEventListener("DOMContentLoaded", ()=>{
-  pagPokemons();
-  // mostrarFiltros();
-  // recuperarUsuario();
-  // signOut();
+  paginacion();
+  mostrarFiltros();
+  recuperarUsuario();
+  signOut();
 });

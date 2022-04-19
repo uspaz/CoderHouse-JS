@@ -313,7 +313,7 @@
         display: flex;
         justify-content: space-around;
         align-items: center; }
-        .main--pokedex .container__pokemons .card .card--type .grass, .main--pokedex .container__pokemons .card .card--type .poison, .main--pokedex .container__pokemons .card .card--type .fire, .main--pokedex .container__pokemons .card .card--type .water, .main--pokedex .container__pokemons .card .card--type .fairy, .main--pokedex .container__pokemons .card .card--type .psychic, .main--pokedex .container__pokemons .card .card--type .rock, .main--pokedex .container__pokemons .card .card--type .ground, .main--pokedex .container__pokemons .card .card--type .electric, .main--pokedex .container__pokemons .card .card--type .fighting, .main--pokedex .container__pokemons .card .card--type .ice {
+        .main--pokedex .container__pokemons .card .card--type .grass, .main--pokedex .container__pokemons .card .card--type .poison, .main--pokedex .container__pokemons .card .card--type .fire, .main--pokedex .container__pokemons .card .card--type .water, .main--pokedex .container__pokemons .card .card--type .fairy, .main--pokedex .container__pokemons .card .card--type .psychic, .main--pokedex .container__pokemons .card .card--type .rock, .main--pokedex .container__pokemons .card .card--type .ground, .main--pokedex .container__pokemons .card .card--type .electric, .main--pokedex .container__pokemons .card .card--type .fighting, .main--pokedex .container__pokemons .card .card--type .ice, .main--pokedex .container__pokemons .card .card--type .flying, .main--pokedex .container__pokemons .card .card--type .bug, .main--pokedex .container__pokemons .card .card--type .normal, .main--pokedex .container__pokemons .card .card--type .ghost, .main--pokedex .container__pokemons .card .card--type .dark, .main--pokedex .container__pokemons .card .card--type .dragon, .main--pokedex .container__pokemons .card .card--type .steel {
           width: 130px;
           height: 35px;
           display: flex;
@@ -327,7 +327,7 @@
           border-radius: 10px;
           text-shadow: #000000 3px 2px 4px; }
         .main--pokedex .container__pokemons .card .card--type .poison {
-          background-color: #7b2cbf; }
+          background-color: #8a5dc0; }
         .main--pokedex .container__pokemons .card .card--type .fire {
           background-color: #fd7d24; }
         .main--pokedex .container__pokemons .card .card--type .water {
@@ -346,6 +346,20 @@
           background-color: #dc2f02; }
         .main--pokedex .container__pokemons .card .card--type .ice {
           background-color: #48cae4; }
+        .main--pokedex .container__pokemons .card .card--type .flying {
+          background-color: #4a9daa; }
+        .main--pokedex .container__pokemons .card .card--type .bug {
+          background-color: #358a48; }
+        .main--pokedex .container__pokemons .card .card--type .normal {
+          background-color: #84919a; }
+        .main--pokedex .container__pokemons .card .card--type .ghost {
+          background-color: #5b597e; }
+        .main--pokedex .container__pokemons .card .card--type .dark {
+          background-color: #1c1d1d; }
+        .main--pokedex .container__pokemons .card .card--type .dragon {
+          background-color: #41667e; }
+        .main--pokedex .container__pokemons .card .card--type .steel {
+          background-color: #349e7a; }
   .main--pokedex .pages {
     max-width: 500px;
     display: flex;
@@ -518,7 +532,7 @@
             font-size: 16px; }
           .body .main--pokedex .container__pokemons .card .card--data h2 {
             font-size: 20px; }
-          .body .main--pokedex .container__pokemons .card .card--type .planta {
+          .body .main--pokedex .container__pokemons .card .card--type .grass, .body .main--pokedex .container__pokemons .card .card--type .poison, .body .main--pokedex .container__pokemons .card .card--type .fire, .body .main--pokedex .container__pokemons .card .card--type .water, .body .main--pokedex .container__pokemons .card .card--type .fairy, .body .main--pokedex .container__pokemons .card .card--type .psychic, .body .main--pokedex .container__pokemons .card .card--type .rock, .body .main--pokedex .container__pokemons .card .card--type .ground, .body .main--pokedex .container__pokemons .card .card--type .electric, .body .main--pokedex .container__pokemons .card .card--type .fighting, .body .main--pokedex .container__pokemons .card .card--type .ice, .body .main--pokedex .container__pokemons .card .card--type .flying, .body .main--pokedex .container__pokemons .card .card--type .bug, .body .main--pokedex .container__pokemons .card .card--type .normal, .body .main--pokedex .container__pokemons .card .card--type .ghost, .body .main--pokedex .container__pokemons .card .card--type .dark, .body .main--pokedex .container__pokemons .card .card--type .dragon, .body .main--pokedex .container__pokemons .card .card--type .steel {
             width: 90px;
             font-size: 16px; }
     .body .footer {
@@ -558,7 +572,7 @@
         font-size: 18px; }
       .body .main--pokedex .container__pokemons .card .card--data h2 {
         font-size: 22px; }
-      .body .main--pokedex .container__pokemons .card .card--type .planta {
+      .body .main--pokedex .container__pokemons .card .card--type .grass, .body .main--pokedex .container__pokemons .card .card--type .poison, .body .main--pokedex .container__pokemons .card .card--type .fire, .body .main--pokedex .container__pokemons .card .card--type .water, .body .main--pokedex .container__pokemons .card .card--type .fairy, .body .main--pokedex .container__pokemons .card .card--type .psychic, .body .main--pokedex .container__pokemons .card .card--type .rock, .body .main--pokedex .container__pokemons .card .card--type .ground, .body .main--pokedex .container__pokemons .card .card--type .electric, .body .main--pokedex .container__pokemons .card .card--type .fighting, .body .main--pokedex .container__pokemons .card .card--type .ice, .body .main--pokedex .container__pokemons .card .card--type .flying, .body .main--pokedex .container__pokemons .card .card--type .bug, .body .main--pokedex .container__pokemons .card .card--type .normal, .body .main--pokedex .container__pokemons .card .card--type .ghost, .body .main--pokedex .container__pokemons .card .card--type .dark, .body .main--pokedex .container__pokemons .card .card--type .dragon, .body .main--pokedex .container__pokemons .card .card--type .steel {
         width: 115px;
         font-size: 18px; }
     .body .footer .ft__redes .redes__ul .item {
@@ -582,6 +596,6 @@
           font-size: 20px; }
         .body .main--pokedex .container__pokemons .card .card--data h2 {
           font-size: 24px; }
-        .body .main--pokedex .container__pokemons .card .card--type .planta {
+        .body .main--pokedex .container__pokemons .card .card--type .grass, .body .main--pokedex .container__pokemons .card .card--type .poison, .body .main--pokedex .container__pokemons .card .card--type .fire, .body .main--pokedex .container__pokemons .card .card--type .water, .body .main--pokedex .container__pokemons .card .card--type .fairy, .body .main--pokedex .container__pokemons .card .card--type .psychic, .body .main--pokedex .container__pokemons .card .card--type .rock, .body .main--pokedex .container__pokemons .card .card--type .ground, .body .main--pokedex .container__pokemons .card .card--type .electric, .body .main--pokedex .container__pokemons .card .card--type .fighting, .body .main--pokedex .container__pokemons .card .card--type .ice, .body .main--pokedex .container__pokemons .card .card--type .flying, .body .main--pokedex .container__pokemons .card .card--type .bug, .body .main--pokedex .container__pokemons .card .card--type .normal, .body .main--pokedex .container__pokemons .card .card--type .ghost, .body .main--pokedex .container__pokemons .card .card--type .dark, .body .main--pokedex .container__pokemons .card .card--type .dragon, .body .main--pokedex .container__pokemons .card .card--type .steel {
           width: 130px;
           font-size: 22px; } }
