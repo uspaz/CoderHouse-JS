@@ -3,6 +3,18 @@
   width: 100%;
   background-color: #f6ee2b;
   padding-bottom: 22px;
+  .spinner{
+    box-sizing: border-box;
+    position: absolute;
+    top: 180px;
+    left: 42%;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border-top: 2px solid coral;
+    border-right: 2px solid transparent;
+    animation: spinner .7s linear infinite;
+  }
   .container__pokemons{
     height: auto;
     width: 100%;
@@ -22,6 +34,7 @@
         margin: 0px auto;
         img{
           width: 100%;
+          cursor: pointer;
           filter: drop-shadow( 0px 4px 4px rgba(0, 0, 0, .45)) ;
         }
       }
@@ -57,6 +70,9 @@
           background-color: #67CB4F;
           border-radius: 10px;
           text-shadow: #000000 3px 2px 4px;
+          &::first-letter{
+            text-transform: uppercase;
+          }
         }
         .poison{
           @extend .grass;
@@ -146,5 +162,10 @@
   }
 }
 
+@keyframes spinner {
+  to{
+    transform: rotate(360deg);
+  }
+}
 
 

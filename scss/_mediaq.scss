@@ -1,6 +1,9 @@
 @media only screen and (min-width: 600px){
   .main--pokedex{
     padding-bottom: 30px;
+    .spinner{
+      left: 45%;
+    }
     .container__pokemons{
       .card{
         width: 250px;
@@ -112,6 +115,10 @@
     .main--pokedex{
       grid-column: 2 / 3 ;
       grid-row: 1 / 2;
+      .spinner{
+        top: 170px;
+        left: 66%;
+      }
       .container__pokemons{
         padding-top: 200px;
         gap: 20px;
@@ -174,6 +181,11 @@
         width: 85%;
       }
     }
+    .main--pokedex{
+      .spinner{
+        left: 64.5% !important;
+      }
+    }
   }
   @media only screen and (min-width: 1200px){
     .body{
@@ -186,6 +198,10 @@
         }
       }
       .main--pokedex{
+        .spinner{
+          top: 160px;
+          left: 62.5% !important;
+        }
         .container__pokemons{
           .card{
             width: 250px;

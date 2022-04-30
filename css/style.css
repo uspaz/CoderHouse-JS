@@ -278,6 +278,17 @@
   width: 100%;
   background-color: #f6ee2b;
   padding-bottom: 22px; }
+  .main--pokedex .spinner {
+    box-sizing: border-box;
+    position: absolute;
+    top: 180px;
+    left: 42%;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border-top: 2px solid coral;
+    border-right: 2px solid transparent;
+    animation: spinner .7s linear infinite; }
   .main--pokedex .container__pokemons {
     height: auto;
     width: 100%;
@@ -297,6 +308,7 @@
         margin: 0px auto; }
         .main--pokedex .container__pokemons .card .card--image img {
           width: 100%;
+          cursor: pointer;
           filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.45)); }
       .main--pokedex .container__pokemons .card .card--data {
         font-family: 'Varela Round', sans-serif;
@@ -326,6 +338,8 @@
           background-color: #67CB4F;
           border-radius: 10px;
           text-shadow: #000000 3px 2px 4px; }
+          .main--pokedex .container__pokemons .card .card--type .grass::first-letter, .main--pokedex .container__pokemons .card .card--type .poison::first-letter, .main--pokedex .container__pokemons .card .card--type .fire::first-letter, .main--pokedex .container__pokemons .card .card--type .water::first-letter, .main--pokedex .container__pokemons .card .card--type .fairy::first-letter, .main--pokedex .container__pokemons .card .card--type .psychic::first-letter, .main--pokedex .container__pokemons .card .card--type .rock::first-letter, .main--pokedex .container__pokemons .card .card--type .ground::first-letter, .main--pokedex .container__pokemons .card .card--type .electric::first-letter, .main--pokedex .container__pokemons .card .card--type .fighting::first-letter, .main--pokedex .container__pokemons .card .card--type .ice::first-letter, .main--pokedex .container__pokemons .card .card--type .flying::first-letter, .main--pokedex .container__pokemons .card .card--type .bug::first-letter, .main--pokedex .container__pokemons .card .card--type .normal::first-letter, .main--pokedex .container__pokemons .card .card--type .ghost::first-letter, .main--pokedex .container__pokemons .card .card--type .dark::first-letter, .main--pokedex .container__pokemons .card .card--type .dragon::first-letter, .main--pokedex .container__pokemons .card .card--type .steel::first-letter {
+            text-transform: uppercase; }
         .main--pokedex .container__pokemons .card .card--type .poison {
           background-color: #8a5dc0; }
         .main--pokedex .container__pokemons .card .card--type .fire {
@@ -372,6 +386,10 @@
       cursor: pointer;
       margin: 0px 10px;
       color: #d90429; }
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg); } }
 
 .footer {
   height: 150px;
@@ -432,6 +450,8 @@
 @media only screen and (min-width: 600px) {
   .main--pokedex {
     padding-bottom: 30px; }
+    .main--pokedex .spinner {
+      left: 45%; }
     .main--pokedex .container__pokemons .card {
       width: 250px;
       height: 300px; }
@@ -520,6 +540,9 @@
     .body .main--pokedex {
       grid-column: 2 / 3;
       grid-row: 1 / 2; }
+      .body .main--pokedex .spinner {
+        top: 170px;
+        left: 66%; }
       .body .main--pokedex .container__pokemons {
         padding-top: 200px;
         gap: 20px; }
@@ -556,13 +579,18 @@
       height: 100px;
       width: 266px; }
     .body .header__section--filter {
-      width: 85%; } }
+      width: 85%; }
+  .main--pokedex .spinner {
+    left: 64.5% !important; } }
 
 @media only screen and (min-width: 1200px) {
   .body {
     grid-template-columns: 30% 70%; }
     .body .header .header__section--filter .ul--filter {
       padding: 0px 20px; }
+    .body .main--pokedex .spinner {
+      top: 160px;
+      left: 62.5% !important; }
     .body .main--pokedex .container__pokemons .card {
       width: 250px;
       height: 280px; }
